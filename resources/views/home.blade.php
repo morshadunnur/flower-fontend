@@ -99,31 +99,15 @@
                                                     src="assets/images/flower/product/1.jpg" alt=""></a>
                                             <div class="media-body align-self-center">
                                                 <div class="rating"><i class="fa fa-star"></i> <i
-                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                         class="fa fa-star"></i> <i class="fa fa-star"></i></div>
                                                 <a href="product-page(no-sidebar).html">
                                                     <h6>@{{ product.productName }}</h6>
                                                 </a>
-                                                <h4>$500.00</h4>
+                                                <h4>@{{ product.price }}</h4>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-box2">
-                                        <div class="media">
-                                            <a href="product-page(no-sidebar).html"><img
-                                                    class="img-fluid blur-up lazyload"
-                                                    src="assets/images/flower/product/2.jpg" alt=""></a>
-                                            <div class="media-body align-self-center">
-                                                <div class="rating"><i class="fa fa-star"></i> <i
-                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                        class="fa fa-star"></i> <i class="fa fa-star"></i></div>
-                                                <a href="product-page(no-sidebar).html">
-                                                    <h6>Slim Fit Cotton Shirt</h6>
-                                                </a>
-                                                <h4>$500.00 <del>$600.00</del></h4>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

@@ -33,6 +33,8 @@ class ProductController extends Controller
               'productName' => $product->title,
               'productThumb' => $product->feature_image,
               'Description' => $product->description,
+              'price' => $product->prices[0]->selling_price,
+              'stock' => $product->prices->sum('quantity')
             ];
         });
          return response()->json($products, 200);
