@@ -6,7 +6,7 @@
         <div class="slide-1 home-slider">
             <div>
                 <div class="home text-center">
-                    <img src="assets/images/home-banner/30.jpg" alt="" class="bg-img">
+                    <img src="#" alt="" class="bg-img">
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -23,7 +23,7 @@
             </div>
             <div>
                 <div class="home text-center">
-                    <img src="assets/images/home-banner/31.jpg" alt="" class="bg-img">
+                    <img src="#" alt="" class="bg-img">
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -51,7 +51,7 @@
                     <a href="#">
                         <div class="collection-banner p-left text-center">
                             <div class="img-part">
-                                <img src="assets/images/flower/sub-banner2.jpg" class="img-fluid blur-up lazyload"
+                                <img src="#" class="img-fluid blur-up lazyload"
                                      alt="">
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                     <a href="#">
                         <div class="collection-banner p-right text-right">
                             <div class="img-part">
-                                <img src="assets/images/flower/sub-banner1.jpg" class="img-fluid blur-up lazyload"
+                                <img src="#" class="img-fluid blur-up lazyload"
                                      alt="">
                             </div>
                             <div class="contain-banner">
@@ -94,9 +94,7 @@
                                 <div class="sec-1">
                                     <div class="product-box2">
                                         <div class="media">
-                                            <a href="product-page(no-sidebar).html"><img
-                                                    class="img-fluid blur-up lazyload"
-                                                    src="assets/images/flower/product/1.jpg" alt=""></a>
+                                            <a href="product-page(no-sidebar).html"><img class="img-fluid blur-up lazyload" :src="product.productThumb" alt=""></a>
                                             <div class="media-body align-self-center">
                                                 <div class="rating"><i class="fa fa-star"></i> <i
                                                         class="fa fa-star"></i> <i class="fa fa-star"></i></div>
@@ -143,7 +141,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/7.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -161,7 +159,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/12.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -179,7 +177,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/11.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -197,7 +195,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/10.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -215,7 +213,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/8.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -233,7 +231,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/7.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -251,7 +249,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/6.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -269,7 +267,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/5.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -291,7 +289,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/4.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -309,7 +307,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/3.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -327,7 +325,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/2.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -345,7 +343,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/1.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -363,7 +361,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/10.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -381,7 +379,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/12.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -399,7 +397,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/12.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -417,7 +415,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/3.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -439,7 +437,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/5.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -457,7 +455,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/2.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -475,7 +473,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/7.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -493,7 +491,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/1.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -511,7 +509,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/2.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -529,7 +527,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/3.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -547,7 +545,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/4.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -565,7 +563,7 @@
                                                 <div class="media">
                                                     <a href="product-page(no-sidebar).html"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/flower/product/5.jpg" alt=""></a>
+                                                            src="#" alt=""></a>
                                                     <div class="media-body align-self-center">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
                                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -606,12 +604,12 @@
                                         sale</span></div>
                                 <div class="front">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/7.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="back">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/6.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="cart-box">
@@ -636,12 +634,12 @@
                             <div class="img-wrapper">
                                 <div class="front">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/1.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="back">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/2.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="cart-box">
@@ -668,12 +666,12 @@
                                         sale</span></div>
                                 <div class="front">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/3.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="back">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/4.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="cart-box">
@@ -698,12 +696,12 @@
                             <div class="img-wrapper">
                                 <div class="front">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/5.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="back">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/6.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="cart-box">
@@ -730,12 +728,12 @@
                                         sale</span></div>
                                 <div class="front">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/7.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="back">
                                     <a href="product-page(no-sidebar).html"><img
-                                            src="assets/images/flower/product/6.jpg"
+                                            src="#"
                                             class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
                                 <div class="cart-box">
@@ -779,7 +777,7 @@
                             <a href="#">
                                 <div class="classic-effect">
                                     <div>
-                                        <img src="assets/images/flower/blog/1.jpg"
+                                        <img src="#"
                                              class="img-fluid blur-up lazyload bg-img" alt="">
                                         <span></span>
                                     </div>
@@ -798,7 +796,7 @@
                             <a href="#">
                                 <div class="classic-effect">
                                     <div>
-                                        <img src="assets/images/flower/blog/2.jpg"
+                                        <img src="#"
                                              class="img-fluid blur-up lazyload bg-img" alt="">
                                         <span></span>
                                     </div>
@@ -817,7 +815,7 @@
                             <a href="#">
                                 <div class="classic-effect">
                                     <div>
-                                        <img src="assets/images/flower/blog/3.jpg"
+                                        <img src="#"
                                              class="img-fluid blur-up lazyload bg-img" alt="">
                                         <span></span>
                                     </div>
@@ -836,7 +834,7 @@
                             <a href="#">
                                 <div class="classic-effect">
                                     <div>
-                                        <img src="assets/images/flower/blog/2.jpg"
+                                        <img src="#"
                                              class="img-fluid blur-up lazyload bg-img" alt="">
                                         <span></span>
                                     </div>
@@ -993,7 +991,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/4.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay">
                                         <i class="fa fa-instagram" aria-hidden="true"></i></div>
@@ -1003,7 +1001,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/5.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                                 </div>
@@ -1012,7 +1010,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/6.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                                 </div>
@@ -1021,7 +1019,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/7.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                                 </div>
@@ -1030,7 +1028,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/8.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                                 </div>
@@ -1039,7 +1037,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/2.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                                 </div>
@@ -1048,7 +1046,7 @@
                         <div>
                             <a href="#">
                                 <div class="instagram-box">
-                                    <img src="assets/images/flower/insta/2.jpg" class="bg-img" alt="Avatar"
+                                    <img src="#" class="bg-img" alt="Avatar"
                                          style="width:100%">
                                     <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                                 </div>
