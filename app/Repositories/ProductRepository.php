@@ -32,4 +32,10 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this->model->active()->with('prices')->get();
     }
+
+
+    public function findBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->first();
+    }
 }

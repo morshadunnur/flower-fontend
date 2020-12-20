@@ -25,18 +25,20 @@ class ProductController extends Controller
     {
         $this->request = $request;
     }
+
     public function getProductList(ProductRepositoryInterface $productRepository): \Illuminate\Http\JsonResponse
     {
-        $products = $productRepository->get()->map(function ($product){
+        $products = $productRepository->get()->map(function ($product) {
             return [
-              'productId' => $product->id,
-              'productName' => $product->title,
-              'productThumb' => $product->feature_image,
-              'Description' => $product->description,
-              'price' => $product->prices[0]->selling_price,
-              'stock' => $product->prices->sum('quantity')
+                'productId'    => $product->id,
+                'productName'  => $product->title,
+                'slug'         => $product->slug,
+                'productThumb' => $product->feature_image,
+                'Description'  => $product->description,
+                'price'        => $product->prices[0]->selling_price,
+                'stock'        => $product->prices->sum('quantity')
             ];
         });
-         return response()->json($products, 200);
+        return response()->json($products, 200);
     }
 }

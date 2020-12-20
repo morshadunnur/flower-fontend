@@ -170,7 +170,7 @@
                             </div>
                         </div>
                         <div class="brand-logo">
-                            <a href="index.html"><img src="assets/images/icon/logo.png"
+                            <a href="{{ route('flower.home') }}"><img src="assets/images/icon/logo.png"
                                                       class="img-fluid blur-up lazyload" alt=""></a>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                                         <div class="mobile-back text-right">Back<i class="fa fa-angle-right pl-2"
                                                                                    aria-hidden="true"></i></div>
                                     </li>
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="{{ route('flower.home') }}">Home</a></li>
                                     <li>
                                         <a href="#">shop</a>
                                         <ul>

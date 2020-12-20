@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomePageController::class, 'index'])->name('flower.home');
+Route::get('product/{slug}', [HomePageController::class, 'detailsProduct'])->name('flower.product.details');
 
 Route::group(['prefix' => 'api'], function (){
     Route::get('product-list', [ProductController::class, 'getProductList'])->name('api.product.list');
+    Route::get('product-details', [ProductController::class, 'getProductDetails'])->name('api.product.details');
 });

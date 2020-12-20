@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\ProductRepositoryInterface;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -23,5 +24,12 @@ class HomePageController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function detailsProduct($slug, ProductRepositoryInterface $productRepository)
+    {
+        $product = $productRepository->findBySlug($slug);
+        if (!$product) return redirect()->route('flower.home');
+        return view('product.details', $product);
     }
 }

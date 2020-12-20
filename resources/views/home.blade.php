@@ -94,11 +94,11 @@
                                 <div class="sec-1">
                                     <div class="product-box2">
                                         <div class="media">
-                                            <a href="product-page(no-sidebar).html"><img class="img-fluid blur-up lazyload" :src="product.productThumb" alt=""></a>
+                                            <a :href="'/product/' + product.slug"><img class="img-fluid blur-up lazyload" :src="product.productThumb" alt=""></a>
                                             <div class="media-body align-self-center">
                                                 <div class="rating"><i class="fa fa-star"></i> <i
                                                         class="fa fa-star"></i> <i class="fa fa-star"></i></div>
-                                                <a href="product-page(no-sidebar).html">
+                                                <a :href="'/product/' + product.slug">
                                                     <h6>@{{ product.productName }}</h6>
                                                 </a>
                                                 <h4>@{{ product.price }}</h4>
