@@ -38,4 +38,9 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this->model->where('slug', $slug)->first();
     }
+
+    public function getDetailsById($productId)
+    {
+        return $this->model->where('id', $productId)->with(['prices', 'images'])->first();
+    }
 }

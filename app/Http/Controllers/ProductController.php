@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Contracts\ProductRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
 {
@@ -40,5 +41,20 @@ class ProductController extends Controller
             ];
         });
         return response()->json($products, 200);
+    }
+
+    public function getProductDetails(Request $request, ProductRepositoryInterface $productRepository)
+    {
+        try{
+            $data = $this->validate($request, [
+                'product_id' => 'required|numeric|integer|min:1|exists:products,id'
+            ]);
+            $product = $productRepository->getDetailsById($data['product_id']);
+            return response()->json($product, 200);
+        }catch (ValidationException $exception){
+            return response()->json([
+                'errors' => $exception->errors()
+            ], 422);
+        }
     }
 }

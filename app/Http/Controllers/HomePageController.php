@@ -30,6 +30,6 @@ class HomePageController extends Controller
     {
         $product = $productRepository->findBySlug($slug);
         if (!$product) return redirect()->route('flower.home');
-        return view('product.details', $product);
+        return view('product.details', compact('product'));
     }
 }
