@@ -8,6 +8,7 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Query\Builder;
 
 class Product extends Model
@@ -19,15 +20,20 @@ class Product extends Model
         return $this->where('status', 1);
     }
 
-    public function prices(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function prices(): HasMany
     {
         return $this->hasMany(ProductPrice::class)->orderBy('id', 'desc');
     }
 
 
 
-    public function images(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function images(): HasMany
     {
         return $this->hasMany(ProductImage::class);
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(OrderDetail::class)->with('order');
     }
 }

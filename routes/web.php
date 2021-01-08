@@ -22,3 +22,7 @@ Route::group(['prefix' => 'api'], function (){
     Route::get('product-list', [ProductController::class, 'getProductList'])->name('api.product.list');
     Route::get('product-details', [ProductController::class, 'getProductDetails'])->name('api.product.details');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
