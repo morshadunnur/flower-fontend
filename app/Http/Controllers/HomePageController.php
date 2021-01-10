@@ -19,7 +19,6 @@ class HomePageController extends Controller
     public function __construct(Request $request)
     {
         $this->request = $request;
-        $this->middleware('guest');
     }
     public function index()
     {
