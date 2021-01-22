@@ -21,6 +21,7 @@ Route::get('product/{slug}', [HomePageController::class, 'detailsProduct'])->nam
 Route::group(['prefix' => 'api'], function (){
     Route::get('product-list', [ProductController::class, 'getProductList'])->name('api.product.list');
     Route::get('product-details', [ProductController::class, 'getProductDetails'])->name('api.product.details');
+    Route::post('process-cart', [ProductController::class, 'processCart'])->name('api.product.cart');
 });
 
 Auth::routes();

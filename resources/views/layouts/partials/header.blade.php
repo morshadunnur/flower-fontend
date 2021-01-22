@@ -23,7 +23,12 @@
                                     <li><a href="{{ route('register') }}" data-lng="en">Register</a></li>
                                     @endguest
                                 @auth
-                                <li><a href="#" data-lng="es">Logout</a></li>
+                                <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" data-lng="es">Logout</a></li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                 @endauth
                             </ul>
                         </li>

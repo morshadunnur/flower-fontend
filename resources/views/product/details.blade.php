@@ -167,85 +167,19 @@
                                 <div>
                                     <div class="media">
                                         <a href="#"><img class="img-fluid blur-up lazyload"
-                                                         src="assets/images/pro/1.jpg" alt=""></a>
+                                                         src="#" alt=""></a>
                                         <div class="media-body align-self-center">
                                             <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                                href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <a href="#"><img class="img-fluid blur-up lazyload"
-                                                         src="assets/images/pro/1.jpg" alt=""></a>
-                                        <div class="media-body align-self-center">
-                                            <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i></div><a
-                                                href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <a href="#"><img class="img-fluid blur-up lazyload"
-                                                         src="assets/images/pro/1.jpg" alt=""></a>
-                                        <div class="media-body align-self-center">
-                                            <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i></div><a
-                                                href="product-page(no-sidebar).html">
+                                                href="#">
                                                 <h6>Slim Fit Cotton Shirt</h6>
                                             </a>
                                             <h4>$500.00</h4>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="media">
-                                        <a href="#"><img class="img-fluid blur-up lazyload"
-                                                         src="assets/images/pro/1.jpg" alt=""></a>
-                                        <div class="media-body align-self-center">
-                                            <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i></div><a
-                                                href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <a href="#"><img class="img-fluid blur-up lazyload"
-                                                         src="assets/images/pro/1.jpg" alt=""></a>
-                                        <div class="media-body align-self-center">
-                                            <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i></div><a
-                                                href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <a href="#"><img class="img-fluid blur-up lazyload"
-                                                         src="assets/images/pro/1.jpg" alt=""></a>
-                                        <div class="media-body align-self-center">
-                                            <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i></div><a
-                                                href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <!-- side-bar single product slider end -->
@@ -294,19 +228,18 @@
 
                                             <h6 class="product-title">quantity</h6>
                                             <div class="qty-box">
-                                                <div class="input-group"><span class="input-group-prepend"><button
-                                                            type="button" class="btn quantity-left-minus"
-                                                            data-type="minus" data-field=""><i
+                                                <div class="input-group"><span class="input-group-prepend" @click="minusOne"><button
+                                                            type="button" class="btn"
+                                                            data-type="minus" ><i
                                                                 class="ti-angle-left"></i></button> </span>
                                                     <input type="text" name="quantity" class="form-control input-number"
-                                                           value="1"> <span class="input-group-prepend"><button
-                                                            type="button" class="btn quantity-right-plus"
+                                                           v-model="singleItemCart.quantity"> <span class="input-group-prepend"><button
+                                                            type="button" class="btn" @click="plusOne"
                                                             data-type="plus" data-field=""><i
                                                                 class="ti-angle-right"></i></button></span></div>
                                             </div>
                                         </div>
-                                        <div class="product-buttons"><a href="#" data-toggle="modal"
-                                                                        data-target="#addtocart" class="btn btn-solid">add to cart</a> <a
+                                        <div class="product-buttons"><a href="#" @click="addToCart('{{ route('api.product.cart') }}', product)" class="btn btn-solid">add to cart</a> <a
                                                 href="#" class="btn btn-solid">buy now</a></div>
                                         <div class="border-product">
                                             <h6 class="product-title">product details</h6>

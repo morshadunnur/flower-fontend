@@ -8,7 +8,11 @@ namespace App\Http\Controllers;
 
 
 use App\Contracts\ProductRepositoryInterface;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
@@ -55,6 +59,38 @@ class ProductController extends Controller
             return response()->json([
                 'errors' => $exception->errors()
             ], 422);
+        }
+    }
+
+    public function processCart(Request $request)
+    {
+        if (Auth::check()){
+            // validate data
+            $data = $this->validate($request, [
+                'product_id' => 'required|numeric|integer|exists:products,id',
+                'selling_price' => 'required|numeric',
+                'quantity' => 'required|numeric'
+            ]);
+            // Create new cart type order and add order details
+            $order = DB::transaction(function() use ($request){
+                return $order = tap(Order::create([
+                    'customer_id' => auth()->user()->id,
+                    'global_order_status' => 1,
+                    'type' => 'cart',
+                    'placed_date' => date('Y-m-d H:i:s')
+                ]), function ($order) use ($request){
+                    OrderDetail::create([
+                       'order_id' => $order->id,
+                       'product_id' => $request->product_id,
+                       'quantity' => $request->quantity,
+                       'price' => $request->selling_price,
+                       'status' => 1,
+                    ]);
+                });
+            });
+            return response()->json($order, 200);
+        }else{
+            return response()->json('Guest user', 401);
         }
     }
 }
