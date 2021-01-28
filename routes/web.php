@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartPageController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -17,11 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomePageController::class, 'index'])->name('flower.home');
 Route::get('product/{slug}', [HomePageController::class, 'detailsProduct'])->name('flower.product.details');
+Route::get('cart', [CartPageController::class, 'singleCartPage'])->name('flower.cart.page');
 
 Route::group(['prefix' => 'api'], function (){
     Route::get('product-list', [ProductController::class, 'getProductList'])->name('api.product.list');
     Route::get('product-details', [ProductController::class, 'getProductDetails'])->name('api.product.details');
     Route::post('process-cart', [ProductController::class, 'processCart'])->name('api.product.cart');
+    Route::get('cart-item', [CartPageController::class, 'cartList'])->name('api.cart.list');
 });
 
 Auth::routes();
