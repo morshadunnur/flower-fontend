@@ -1,7 +1,8 @@
 let app = new Vue({
     el: '#singleCartPage',
     data: {
-        cart: [],
+        cartItems: [],
+        cartItem: false,
 
     },
     methods: {
@@ -9,8 +10,10 @@ let app = new Vue({
             axios.get(cartItemRoute)
                         .then(response => {
                             if (response.status === 200){
-                                toastr.success('Device Registered');
-                                console.log(response.data);
+                                toastr.success('Cart Items');
+                                this.cartItem = true;
+                                this.cartItems = response.data.details;
+
 
                             }
                         })
@@ -18,6 +21,10 @@ let app = new Vue({
                             switch (e.response.status){
                                 case 422:
                                     toastr.error('validation failed!')
+                                    break;
+                                case 404:
+                                    this.cartItem = false;
+                                    toastr.error('No Items found in cart!');
                                     break;
                                 case 406:
                                     toastr.error('Can not process the given data!');

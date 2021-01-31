@@ -72,6 +72,7 @@ class ProductController extends Controller
                 'quantity' => 'required|numeric'
             ]);
             // Create new cart type order and add order details
+            // Check exist order count
             $order = DB::transaction(function() use ($request){
                 return $order = tap(Order::create([
                     'customer_id' => auth()->user()->id,

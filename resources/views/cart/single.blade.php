@@ -26,7 +26,7 @@
 
 
     <!--section start-->
-    <section class="cart-section section-b-space">
+    <section class="cart-section section-b-space" v-if="cartItem">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -104,6 +104,19 @@
         </div>
     </section>
     <!--section end-->
+
+    <section class="cart-section section-b-space" v-if="!cartItem">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-center">
+                        No Items in cart. Please login or register!
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
 
 

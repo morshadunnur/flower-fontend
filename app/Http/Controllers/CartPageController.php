@@ -24,7 +24,7 @@ class CartPageController extends Controller
                 return response()->json('Something went happen', 406);
             }
         }else{
-            return response()->json('No items for this user', 404);
+            return response()->json('No items in cart', 404);
         }
     }
 }

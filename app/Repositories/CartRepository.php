@@ -30,8 +30,15 @@ class CartRepository implements CartRepositoryInterface
     public function getItems($customer_id)
     {
         return $this->model->select('*')
-            ->where('customer_id', $customer_id)
-            ->where('type', 'cart')
-            ->get();
+            ->where([
+                ['customer_id', $customer_id],
+                ['type', 'cart']
+            ])
+            ->with(['details' => function($query){
+                return $query->select('*')->with(['product' => function($query) {
+                    return $query->select('*')->with(['prices','images']);
+                }]);
+            }])
+            ->first();
     }
 }
