@@ -7,6 +7,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Contracts\OrderRepositoryInterface;
 use App\Contracts\ProductRepositoryInterface;
 use App\Models\Order;
 use App\Models\OrderDetail;
@@ -62,7 +63,7 @@ class ProductController extends Controller
         }
     }
 
-    public function processCart(Request $request)
+    public function processCart(Request $request, OrderRepositoryInterface $orderRepository)
     {
         if (Auth::check()){
             // validate data
@@ -71,25 +72,39 @@ class ProductController extends Controller
                 'selling_price' => 'required|numeric',
                 'quantity' => 'required|numeric'
             ]);
-            // Create new cart type order and add order details
-            // Check exist order count
-            $order = DB::transaction(function() use ($request){
-                return $order = tap(Order::create([
-                    'customer_id' => auth()->user()->id,
-                    'global_order_status' => 1,
-                    'type' => 'cart',
-                    'placed_date' => date('Y-m-d H:i:s')
-                ]), function ($order) use ($request){
-                    OrderDetail::create([
-                       'order_id' => $order->id,
-                       'product_id' => $request->product_id,
-                       'quantity' => $request->quantity,
-                       'price' => $request->selling_price,
-                       'status' => 1,
-                    ]);
+
+            // Check exist order
+            $previousCart = $orderRepository->findByCustomerId(auth()->user()->id);
+            if (!$previousCart){
+                // Create new cart type order and add order details
+                $cart = DB::transaction(function() use ($request){
+                    return $order = tap(Order::create([
+                        'customer_id' => auth()->user()->id,
+                        'global_order_status' => 1,
+                        'type' => 'cart',
+                        'placed_date' => date('Y-m-d H:i:s')
+                    ]), function ($order) use ($request){
+                        OrderDetail::create([
+                            'order_id' => $order->id,
+                            'product_id' => $request->product_id,
+                            'quantity' => $request->quantity,
+                            'price' => $request->selling_price,
+                            'status' => 1,
+                        ]);
+                    });
                 });
-            });
-            return response()->json($order, 200);
+            }else{
+                // Add to previous cart
+                $cart = OrderDetail::create([
+                    'order_id' => $previousCart->id,
+                    'product_id' => $request->product_id,
+                    'quantity' => $request->quantity,
+                    'price' => $request->selling_price,
+                    'status' => 1,
+                ]);
+            }
+
+            return response()->json($cart, 200);
         }else{
             return response()->json('Guest user', 401);
         }
