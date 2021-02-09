@@ -25,6 +25,7 @@ Route::group(['prefix' => 'api'], function (){
     Route::get('product-details', [ProductController::class, 'getProductDetails'])->name('api.product.details');
     Route::post('process-cart', [ProductController::class, 'processCart'])->name('api.product.cart');
     Route::get('cart-item', [CartPageController::class, 'cartList'])->name('api.cart.list');
+    Route::post('check-out', [CartPageController::class, 'checkoutCart'])->name('api.cart.checkout');
 });
 
 Auth::routes();

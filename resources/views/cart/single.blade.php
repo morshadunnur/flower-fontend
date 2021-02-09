@@ -42,22 +42,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr v-for="(item, index) in cartItems" :key="index">
                             <td>
                                 <a href="#"><img src="#" alt=""></a>
                             </td>
-                            <td><a href="#">cotton shirt</a>
+                            <td><a href="#">@{{ item.product.title }}</a>
                                 <div class="mobile-cart-content row">
                                     <div class="col-xs-3">
                                         <div class="qty-box">
                                             <div class="input-group">
-                                                <input type="text" name="quantity" class="form-control input-number"
-                                                       value="1">
+                                                <input type="text" v-model="item.quantity"  class="form-control input-number"
+                                                       >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xs-3">
-                                        <h2 class="td-color">$63.00</h2>
+                                        <h2 class="td-color">@{{ item.quantity }}</h2>
                                     </div>
                                     <div class="col-xs-3">
                                         <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a>
@@ -66,19 +66,19 @@
                                 </div>
                             </td>
                             <td>
-                                <h2>$63.00</h2>
+                                <h2>@{{ item.price  }}</h2>
                             </td>
                             <td>
                                 <div class="qty-box">
                                     <div class="input-group">
-                                        <input type="number" name="quantity" class="form-control input-number"
-                                               value="1">
+                                        <input type="number" v-model="item.quantity" class="form-control input-number"
+                                               >
                                     </div>
                                 </div>
                             </td>
                             <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
                             <td>
-                                <h2 class="td-color">$4539.00</h2>
+                                <h2 class="td-color">@{{ item.quantity * item.price  }}</h2>
                             </td>
                         </tr>
                         </tbody>
@@ -90,16 +90,17 @@
                         <tr>
                             <td>total price :</td>
                             <td>
-                                <h2>$6935.00</h2>
+                                <h2>@{{ totalPrice }}</h2>
                             </td>
                         </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
+
             <div class="row cart-buttons">
                 <div class="col-6"><a href="#" class="btn btn-solid">continue shopping</a></div>
-                <div class="col-6"><a href="#" class="btn btn-solid">check out</a></div>
+                <div class="col-6"><a href="#" class="btn btn-solid" :disabled="true" @click="checkoutComplete(orderId, '{{ route('api.cart.checkout') }}')">check out</a></div>
             </div>
         </div>
     </section>

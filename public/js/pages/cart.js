@@ -3,6 +3,7 @@ let app = new Vue({
     data: {
         cartItems: [],
         cartItem: false,
+        orderId: '',
 
     },
     methods: {
@@ -13,7 +14,7 @@ let app = new Vue({
                                 toastr.success('Cart Items');
                                 this.cartItem = true;
                                 this.cartItems = response.data.details;
-
+                                this.orderId = response.data.id
 
                             }
                         })
@@ -38,10 +39,55 @@ let app = new Vue({
                             }
 
                         })
+        },
+        checkoutComplete(orderId, route){
+            let data = {
+                order_id: orderId,
+            }
+            axios.post(route, data)
+                        .then(response => {
+                            if (response.status === 204){
+                                toastr.success('checkout completed');
+                                this.cartItem = false;
+                                this.cartItems = [];
+
+                            }
+                        })
+                        .catch(e => {
+                            switch (e.response.status){
+                                case 422:
+                                    toastr.error('validation failed!')
+                                    break;
+                                case 404:
+                                    this.cartItem = false;
+                                    toastr.error('Not found in cart!');
+                                    break;
+                                case 406:
+                                    toastr.error('Can not process the given data!');
+                                    break;
+                                case 500:
+                                    toastr.error('Something went wrong');
+                                    break;
+                                default:
+                                    toastr.error('Something went wrong');
+                                    break;
+                            }
+
+                        })
         }
     },
     computed: {
+        totalPrice(){
+            let sum = 0;
+            if (this.cartItems.length > 0){
+                this.cartItems.forEach((item) => {
+                    sum += item.price * item.quantity;
+                });
+                return sum;
+            }
+            return sum;
 
+        }
     },
     watch: {
 
