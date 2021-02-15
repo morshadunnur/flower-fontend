@@ -71,12 +71,12 @@
                             <td>
                                 <div class="qty-box">
                                     <div class="input-group">
-                                        <input type="number" v-model="item.quantity" class="form-control input-number"
+                                        <input type="number" v-model="item.quantity" @change="updateQuantity(item.id, item.quantity, '{{ route('api.cart.update') }}')" class="form-control input-number"
                                                >
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
+                            <td><a href="#" class="icon" @click="removeCartItem(item.id, '{{ route('api.cart.remove') }}')"><i class="ti-close"></i></a></td>
                             <td>
                                 <h2 class="td-color">@{{ item.quantity * item.price  }}</h2>
                             </td>

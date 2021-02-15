@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contracts\CartRepositoryInterface;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,5 +59,49 @@ class CartPageController extends Controller
         // order status update
 
         // return response
+    }
+
+    public function updateCart(Request $request)
+    {
+        try {
+            $data = $this->validate($request, [
+                'order_details_id' => 'required|integer|exists:order_details,id',
+                'quantity' => 'required|numeric|min:1',
+            ]);
+
+            $order = tap(OrderDetail::find($data['order_details_id']), function ($value) use($data){
+                $value->update([
+                    'quantity' => $data['quantity']
+                ]);
+            });
+            return response()->json($order, 206);
+
+        }catch (ValidationException $exception){
+            return response()->json($exception->errors(), 422);
+        }catch (QueryException | \Exception $exception){
+            return response()->json('something went wrong', 406);
+        }
+    }
+
+    public function removeCart(Request $request, CartRepositoryInterface $cartRepository)
+    {
+        try {
+            $data = $this->validate($request, [
+                'order_details_id' => 'required|integer|exists:order_details,id'
+            ]);
+            // remove item
+            tap(OrderDetail::find($data['order_details_id']), function ($value){
+                $value->destroy($value->id);
+            });
+            $cartItem = $cartRepository->getItems(auth()->user()->id);
+
+            return response()->json($cartItem, 206);
+
+        }catch (ValidationException $exception){
+            return response()->json($exception->errors(), 422);
+        }catch (QueryException | \Exception $exception){
+            dd($exception);
+            return response()->json('something went wrong', 406);
+        }
     }
 }
