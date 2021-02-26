@@ -100,7 +100,10 @@
 
             <div class="row cart-buttons">
                 <div class="col-6"><a href="#" class="btn btn-solid">continue shopping</a></div>
-                <div class="col-6"><a href="#" class="btn btn-solid" :disabled="true" @click="checkoutComplete(orderId, '{{ route('api.cart.checkout') }}')">check out</a></div>
+                <div class="col-6">
+{{--                    <a href="#" class="btn btn-solid" :disabled="true" @click="checkoutComplete(orderId, '{{ route('api.cart.checkout') }}')">check out</a>--}}
+                    <a href="{{ route('flower.cart.confirm') }}" class="btn btn-solid" :disabled="true" >check out</a>
+                </div>
             </div>
         </div>
     </section>

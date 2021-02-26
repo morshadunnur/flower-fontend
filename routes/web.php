@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomePageController::class, 'index'])->name('flower.home');
 Route::get('product/{slug}', [HomePageController::class, 'detailsProduct'])->name('flower.product.details');
 Route::get('cart', [CartPageController::class, 'singleCartPage'])->name('flower.cart.page');
+Route::get('confirm-checkout', [CartPageController::class, 'confirmCheckOut'])->name('flower.cart.confirm');
 
 Route::group(['prefix' => 'api'], function (){
     Route::get('product-list', [ProductController::class, 'getProductList'])->name('api.product.list');

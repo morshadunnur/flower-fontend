@@ -40,12 +40,23 @@ class CartPageController extends Controller
         // validate
         try {
             $data = $this->validate($request, [
-                'order_id' => 'required|integer|exists:orders,id'
+                'order_id' => 'required|integer|exists:orders,id',
+                'street_address' => 'required | string |max:255',
+                'post_code' => 'required|integer|min:1|max:9999',
+                'city' => 'required|string|max:100',
+                'country'=> 'required|string|max:100'
             ]);
 
-            $order = tap(Order::find($data['order_id']), function ($value){
+            $order = tap(Order::find($data['order_id']), function ($value)use($data){
                 $value->update([
-                    'type' => 'order'
+                    'type' => 'order',
+                    'address' => auth()->user()->address ?? null,
+                    'shipping_address' => json_encode([
+                        $data['street_address'],
+                        $data['post_code'],
+                        $data['city'],
+                        $data['country']
+                    ], true),
                 ]);
             });
             return response()->json($order, 204);
@@ -103,5 +114,10 @@ class CartPageController extends Controller
             dd($exception);
             return response()->json('something went wrong', 406);
         }
+    }
+
+    public function confirmCheckOut()
+    {
+        return view('cart.confirm-checkout');
     }
 }
