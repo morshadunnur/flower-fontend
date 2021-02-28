@@ -1,4 +1,4 @@
-<header>
+<header id="header_area">
     <div class="mobile-fix-option"></div>
     <div class="top-header">
         <div class="container">
@@ -239,7 +239,7 @@
                             <div class="icon-nav">
                                 <ul>
                                     <li class="onhover-div mobile-search">
-                                        <div><img src="#" onclick="openSearch()"
+                                        <div><img src="{{ asset('multicart/images/icon/search.png') }}" onclick="openSearch()"
                                                   class="img-fluid blur-up lazyload" alt=""> <i class="ti-search"
                                                                                                 onclick="openSearch()"></i></div>
                                         <div id="search-overlay" class="search-overlay">
@@ -266,7 +266,7 @@
                                         </div>
                                     </li>
                                     <li class="onhover-div mobile-setting">
-                                        <div><img src="assets/images/icon/setting.png"
+                                        <div><img src="{{ asset('multicart/images/icon/setting.png') }}"
                                                   class="img-fluid blur-up lazyload" alt=""> <i
                                                 class="ti-settings"></i></div>
                                         <div class="show-div setting">
@@ -285,47 +285,44 @@
                                         </div>
                                     </li>
                                     <li class="onhover-div mobile-cart">
-                                        <div><img src="assets/images/icon/cart.png"
+                                        <div><img src="{{ asset('multicart/images/icon/cart.png') }}"
                                                   class="img-fluid blur-up lazyload" alt=""> <i
                                                 class="ti-shopping-cart"></i></div>
-                                        <ul class="show-div shopping-cart">
-                                            <li>
+                                        <ul class="show-div shopping-cart" v-if="cartItem">
+                                            <li v-for="(item, index) in cartItems" :key="index">
                                                 <div class="media">
                                                     <a href="#"><img alt="" class="mr-3"
-                                                                     src="assets/images/fashion/product/1.jpg"></a>
+                                                                     src="{{ asset('multicart/images/fashion/product/1.jpg') }}"></a>
                                                     <div class="media-body">
                                                         <a href="#">
-                                                            <h4>item name</h4>
+                                                            <h4>@{{ item.product.title }}</h4>
                                                         </a>
-                                                        <h4><span>1 x $ 299.00</span></h4>
+                                                        <h4><span>@{{ item.quantity }} x @{{ item.price  }}</span></h4>
                                                     </div>
                                                 </div>
                                                 <div class="close-circle"><a href="#"><i class="fa fa-times"
                                                                                          aria-hidden="true"></i></a></div>
                                             </li>
-                                            <li>
-                                                <div class="media">
-                                                    <a href="#"><img alt="" class="mr-3"
-                                                                     src="assets/images/fashion/product/2.jpg"></a>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <h4>item name</h4>
-                                                        </a>
-                                                        <h4><span>1 x $ 299.00</span></h4>
-                                                    </div>
-                                                </div>
-                                                <div class="close-circle"><a href="#"><i class="fa fa-times"
-                                                                                         aria-hidden="true"></i></a></div>
-                                            </li>
+
                                             <li>
                                                 <div class="total">
-                                                    <h5>subtotal : <span>$299.00</span></h5>
+                                                    <h5>subtotal : <span>@{{ totalPrice }}</span></h5>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="buttons"><a href="cart.html" class="view-cart">view
-                                                        cart</a> <a href="#" class="checkout">checkout</a></div>
+                                                <div class="buttons"><a href="{{ route('flower.cart.page') }}" class="view-cart">view
+                                                        cart</a> <a href="{{ route('flower.cart.confirm') }}" class="checkout">checkout</a></div>
                                             </li>
+                                        </ul>
+                                        <ul class="show-div shopping-cart" v-if="!cartItem">
+                                            <li>
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <p>No Items in cart</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
                                         </ul>
                                     </li>
                                 </ul>

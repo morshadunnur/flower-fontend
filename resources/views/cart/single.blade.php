@@ -129,9 +129,7 @@
 @endsection
 
 @push('footer-js')
-    <script>
-        let cartItemRoute = '{{ route('api.cart.list') }}';
-    </script>
+
     <script src="{{ asset('js/pages/cart.js') }}"></script>
 @endpush
 

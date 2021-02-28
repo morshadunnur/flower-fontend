@@ -94,6 +94,11 @@
 <script src="{{ asset('js/toastr.min.js') }}"></script>
 <script src="{{ asset('js/axios.min.js') }}"></script>
 <script src="{{ asset('js/vue.js') }}"></script>
+<script>
+    let cartItemRoute = '{{ route('api.cart.list') }}';
+</script>
+
+<script src="{{ asset('js/pages/minicart.js') }}"></script>
 
 <script>
     $(window).on('load', function () {
