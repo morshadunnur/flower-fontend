@@ -48,6 +48,7 @@ let app = new Vue({
                         .then(response => {
                             if (response.status === 200){
                                 toastr.success('Cart added');
+                                header.getCartItem();
                             }
 
                         })

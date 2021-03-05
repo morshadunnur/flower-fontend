@@ -95,13 +95,25 @@ class ProductController extends Controller
                 });
             }else{
                 // Add to previous cart
-                $cart = OrderDetail::create([
-                    'order_id' => $previousCart->id,
-                    'product_id' => $request->product_id,
-                    'quantity' => $request->quantity,
-                    'price' => $request->selling_price,
-                    'status' => 1,
-                ]);
+                // if product exists then update product
+                $existsProduct = OrderDetail::where([
+                    ['order_id', $previousCart->id],
+                    ['product_id', $data['product_id']]
+                ])->first();
+                if ($existsProduct){
+                    $cart = $existsProduct->update([
+                        'quantity' => $existsProduct->quantity + $data['quantity']
+                    ]);
+                }else {
+                    $cart = OrderDetail::create([
+                        'order_id'   => $previousCart->id,
+                        'product_id' => $request->product_id,
+                        'quantity'   => $request->quantity,
+                        'price'      => $request->selling_price,
+                        'status'     => 1,
+                    ]);
+                }
+
             }
 
             return response()->json($cart, 200);
