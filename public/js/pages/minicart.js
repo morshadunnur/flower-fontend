@@ -41,6 +41,45 @@ let header = new Vue({
 
                 })
         },
+        removeCartItem(orderDetailsID, route){
+            let data = {
+                order_details_id: orderDetailsID,
+            }
+            axios.post(route, data)
+                .then(response => {
+                    if (response.status === 206){
+                        toastr.success('Item removed');
+                        this.cartItem = true;
+                        this.cartItems = response.data.details;
+                        this.orderId = response.data.id;
+                        if (this.cartItems.length === 0){
+                            this.cartItem = false;
+                        }
+
+                    }
+                })
+                .catch(e => {
+                    switch (e.response.status){
+                        case 422:
+                            toastr.error('validation failed!')
+                            break;
+                        case 404:
+                            this.cartItem = false;
+                            toastr.error('Not found in cart!');
+                            break;
+                        case 406:
+                            toastr.error('Can not process the given data!');
+                            break;
+                        case 500:
+                            toastr.error('Something went wrong');
+                            break;
+                        default:
+                            toastr.error('Something went wrong');
+                            break;
+                    }
+
+                })
+        },
     },
     computed: {
         totalPrice(){

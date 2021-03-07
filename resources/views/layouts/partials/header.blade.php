@@ -300,7 +300,7 @@
                                                         <h4><span>@{{ item.quantity }} x @{{ item.price  }}</span></h4>
                                                     </div>
                                                 </div>
-                                                <div class="close-circle"><a href="#"><i class="fa fa-times"
+                                                <div class="close-circle"><a href="#" @click="removeCartItem(item.id, '{{ route('api.cart.remove') }}')"><i class="fa fa-times"
                                                                                          aria-hidden="true"></i></a></div>
                                             </li>
 
